@@ -55,6 +55,7 @@ def check():
         soup = BeautifulSoup(res.text, 'html.parser')  # soup is now the html file
         percentage = soup.findAll("span", class_="qe1dn9-0 RYkpI")
         percentage = re.findall("</span>[0-9][0-9].[0-9][0-9]<!-- -->", str(percentage))
+        #NOTE: Need to see what a negative percentage is shown as, and code it in.  
         percentage = str(percentage[0])
         percentage = percentage.split('</span>')[1]
         percentage = percentage.split('<!-- -->')[0]
